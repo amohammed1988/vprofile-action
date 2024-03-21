@@ -1,6 +1,7 @@
 name: vprofile Actions
 on:
   workflow_dispatch
+
 env:
   AWS_REGION: us-east-2
   ECR_REPOSITORY: mohapp
@@ -109,3 +110,4 @@ jobs:
           values: |
             appimage=${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY }}
             apptag=${{ github.run_number }}
+        name: vprofile-stack
