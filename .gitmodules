@@ -1,0 +1,3 @@
+[submodule "libs/vprofile-action"]
+	path = libs/vprofile-action
+	url = https://github.com/amohammed1988/vprofile-action.git
