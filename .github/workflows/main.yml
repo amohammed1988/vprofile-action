@@ -45,8 +45,10 @@ jobs:
           chart-path: helm/vprofilecharts
           namespace: default
           values: |
-            appimage=${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY }},apptag=${{ github.run_number }}
+            appimage=${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY }}
+            apptag=${{ github.run_number }}
           action: install
           dry-run: false
           timeout: 0s
           update-deps: true
+      
