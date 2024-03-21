@@ -111,3 +111,4 @@ jobs:
             appimage=${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY }}
             apptag=${{ github.run_number }}
         name: vprofile-stack
+      
