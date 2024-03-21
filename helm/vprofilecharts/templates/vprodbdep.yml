@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: vprodb
-        image: vprofile/vprofiledb 
+        image: {{ .values.appimage}}:{{ .values.apptag}}
         ports:
         - name: vprodb-port
           containerPort: 3306
