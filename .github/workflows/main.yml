@@ -109,4 +109,4 @@ jobs:
           values: |
             appimage=${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY }}
             apptag=${{ github.run_number }}
-        name: vprofile-stack
+        # Removed duplicate 'name' field here
