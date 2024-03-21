@@ -45,7 +45,12 @@ jobs:
       - name: Print config file
         run: cat ~/.kube/config
 
+      - name: Check if regcred secret exists
+        id: check_secret
+        run: kubectl get secret regcred && echo "::set-output name=secret_exists::true" || echo "::set-output name=secret_exists::false"
+
       - name: Login to ECR
+        if: steps.check_secret.outputs.secret_exists != 'true'
         run: kubectl create secret docker-registry regcred --docker-server=${{ secrets.REGISTRY }} --docker-username=AWS --docker-password=$(aws ecr get-login-password)
 
       - name: Deploy Helm
