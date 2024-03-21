@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: vprodb
-        image: {{ .values.appimage}}:{{ .values.apptag}}
+        image: vprofile/mohapp
         ports:
         - name: vprodb-port
           containerPort: 3306
